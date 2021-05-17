@@ -25,7 +25,7 @@ li a7, 1
 ecall
 beq a0, s1, exit
 addi a0, a0, 1
-beq zero, zero, loop
+j loop
 
 exit: 
 li a7, 10

@@ -2,7 +2,6 @@
 
 .data
 prompt: .asciz "This exercize prints only the numbers who are even \n"
-initNumbers: .asciz "The numbers given are: "
 space: .asciz " "
 arrayOfNumbers: .word 2,3,4,1,2,6,7,8,9,4,5,6,7,8,5,4,3,12,1213,421,422
 even_numbers: .asciz "The even numbers are: "
