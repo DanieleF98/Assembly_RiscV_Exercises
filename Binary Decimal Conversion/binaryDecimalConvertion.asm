@@ -3,7 +3,7 @@
 .data
 prompt: .asciz "Inserisci un numero decimale (max 10 cifre): "
 output: .asciz "Il corrispondente numero binario è: "
-binSpace: .space 100
+binSpace: .space 30
 .text
 .globl main
 main:
@@ -18,25 +18,23 @@ ecall
 addi a2, a2, 1
 mv t0, a0
 addi a3, a3, 2
-
 la a0, binSpace
+
 loop:
-beqz t0, exit
 beq t0, a2, exitOne
 and t1, t0, a2
+div t0, t0, a3
 beq t1, a2, true
 beq t1, zero, false
 
 
 true:
-div t0, t0, a3
 sb a2, 0(a0)
 addi a0, a0, 1
 addi a4, a4, 1
 j loop
 
 false:
-div t0, t0, a3
 sb zero, 0(a0)
 addi a0, a0, 1
 addi a4, a4, 1
