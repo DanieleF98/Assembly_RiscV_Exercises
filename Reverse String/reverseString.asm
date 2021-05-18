@@ -18,7 +18,6 @@ li a1, 30
 li a7, 8
 ecall
 
-li a7, 11
 li t3, '\n'
 mv t0, a0
 
