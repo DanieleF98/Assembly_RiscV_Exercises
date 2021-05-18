@@ -24,6 +24,7 @@ mv t0, a0
 getLength:	#This funtion gives us the length of the string in t2
 lbu t1, 0(t0)
 beq t1, t3, printRev
+beqz t1, printRev
 addi t0, t0, 1
 addi t2, t2, 1
 j getLength
