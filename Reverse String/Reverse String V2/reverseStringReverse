@@ -1,0 +1,33 @@
+#Author: Daniele Finadri
+
+.globl reverse
+reverse:
+addi sp, sp, -4
+sw ra, 0(sp)
+
+strLen:
+li t1, '\n'
+lbu t2, 0(t0)
+beqz t2, rev
+beq t2, t1, rev
+addi t3, t3, 1
+addi t0, t0, 1
+j strLen
+
+rev:
+addi t0, t0, -1
+
+loop:
+lbu t2, 0(t0)
+beq t2, t1, retn
+beqz t2, retn
+sb t2, 0(t4)
+addi t0, t0, -1
+addi t4, t4, 1
+j loop
+
+
+retn:
+lw ra, 0(sp)
+addi sp, sp, 4
+jr ra
